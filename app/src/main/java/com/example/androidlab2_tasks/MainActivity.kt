@@ -33,9 +33,6 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        requestPermissionNotification()
-        requestPermissionLocation()
-
         val addButton = findViewById<Button>(R.id.add_button)
 
         addButton.setOnClickListener {
@@ -43,8 +40,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val serviceIntent = Intent(this, LocationService::class.java)
-        startForegroundService(serviceIntent)
+        requestPermissionNotification()
     }
 
     override fun onResume() {
@@ -58,7 +54,7 @@ class MainActivity : AppCompatActivity() {
         tasksList.adapter = TaskAdapter(tasks, this)
     }
 
-    private fun requestPermissionNotification() {
+    private fun requestPermissionNotification(): Boolean {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (ActivityCompat.checkSelfPermission(
@@ -71,12 +67,15 @@ class MainActivity : AppCompatActivity() {
                     arrayOf(Manifest.permission.POST_NOTIFICATIONS),
                     101
                 )
+                return false
             }
+            return true
         }
+        return false
     }
 
 
-    private fun requestPermissionLocation() {
+    private fun requestPermissionLocation(): Boolean {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (ActivityCompat.checkSelfPermission(
                     this,
@@ -88,6 +87,34 @@ class MainActivity : AppCompatActivity() {
                     arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
                     102
                 )
+                return false
+            }
+            return true
+        }
+        return false
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray,
+        deviceId: Int
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults, deviceId)
+
+        if(ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.POST_NOTIFICATIONS
+            ) == PackageManager.PERMISSION_GRANTED) {
+            if(!permissions.contains(Manifest.permission.ACCESS_FINE_LOCATION))
+                requestPermissionLocation()
+
+            if(ActivityCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.ACCESS_FINE_LOCATION
+                ) == PackageManager.PERMISSION_GRANTED) {
+                val serviceIntent = Intent(this, LocationService::class.java)
+                startForegroundService(serviceIntent)
             }
         }
     }
