@@ -120,8 +120,7 @@ class LocationService : Service() {
 
     private fun onLocationChanged(location: Location) {
         notificationModule.createNotificationChannel()
-        //notificationModule.sendNotification((134..222).random(), location.latitude.toString())
-        db.getTodayTasks(location).forEach { item ->
+        db.getTodayTasks().forEach { item ->
             val distance = distance(LocationModel(location.latitude, location.longitude), LocationModel(item.latitude, item.longitude))
             if(distance < 0.005 ) {
                 notificationModule.sendNotification(item.id, item.description)

@@ -15,20 +15,11 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.work.PeriodicWorkRequest
 import com.example.androidlab2_tasks.adapters.TaskAdapter
 import com.example.androidlab2_tasks.services.LocationService
 import com.example.androidlab2_tasks.storage.TasksDB
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationCallback
-import com.google.android.gms.location.LocationRequest
-import java.util.concurrent.TimeUnit.SECONDS
 
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var fusedLocationClient: FusedLocationProviderClient
-    private lateinit var locationRequest: LocationRequest
-    private lateinit var locationCallback: LocationCallback
 
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     @SuppressLint("InvalidPeriodicWorkRequestInterval")

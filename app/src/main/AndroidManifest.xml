@@ -27,9 +27,6 @@
             android:foregroundServiceType="location"
             android:exported="false">
         </service>
-        <activity
-            android:name=".NotificationActivity"
-            android:exported="false" />
 
         <receiver
             android:name=".services.GeofenceBroadcastReceiver"

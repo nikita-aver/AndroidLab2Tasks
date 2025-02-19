@@ -5,9 +5,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.location.Location
-import com.example.androidlab2_tasks.models.LocationModel
 import com.example.androidlab2_tasks.models.TaskModel
-import java.sql.Date
 
 class TasksDB(val context: Context, val factory: SQLiteDatabase.CursorFactory?):
     SQLiteOpenHelper(context, "contacts.app", factory, 1)  {
@@ -89,11 +87,9 @@ class TasksDB(val context: Context, val factory: SQLiteDatabase.CursorFactory?):
     }
 
 
-    fun getTodayTasks(location: Location): List<TaskModel> {
+    fun getTodayTasks(): List<TaskModel> {
         val tasks = mutableListOf<TaskModel>()
         val db = readableDatabase
-        val latitude = location.latitude
-        val longitude = location.longitude
         val it = db.rawQuery("select * " +
                                  "  from tasks " +
                                  " where date >= strftime('%s', 'now', 'start of day') * 1000" +

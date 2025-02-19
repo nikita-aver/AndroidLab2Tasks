@@ -52,13 +52,10 @@ class NotificationModule(val context: Context) {
             context, id, intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
 
-        // Custom layout for the notification content
-        //val contentView = RemoteViews(context.packageName, R.layout.activity_notification)
 
         // Build the notification
         val builder = NotificationCompat.Builder(context, channelId)
             .setSmallIcon(R.drawable.ic_launcher_foreground) // Notification icon
-            //.setContent(contentView) // Custom notification content
             .setContentTitle("Available task") // Title displayed in the notification
             .setContentText(description) // Text displayed in the notification
             .setAutoCancel(true) // Dismiss notification when tapped
