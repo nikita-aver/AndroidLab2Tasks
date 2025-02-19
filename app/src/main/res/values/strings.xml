@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">AndroidLab2-Tasks</string>
+    <string name="email_example">example@mail.com</string>
+    <string name="save_button_text">Save</string>
+    <string name="header_text">Tasks</string>
+    <string name="add_avatar_text">Add Avatar</string>
+    <string name="name_field_hint">Name</string>
+    <string name="delete_button_text">Delete</string>
+    <string name="full_name_field">Name Surname</string>
+    <string name="description_hint">Description...</string>
+    <string name="latitude_hint">latitude</string>
+    <string name="longitude_hint">longitude</string>
+    <string name="task_notification_text">You are to be near with task location</string>
+</resources>

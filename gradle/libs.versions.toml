@@ -1,0 +1,47 @@
+[versions]
+agp = "8.8.1"
+corePerformance = "1.0.0"
+coreRemoteviews = "1.1.0"
+coreSplashscreen = "1.2.0-alpha02"
+kotlin = "1.9.24"
+coreKtx = "1.15.0"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+appcompat = "1.7.0"
+material = "1.12.0"
+activity = "1.10.0"
+constraintlayout = "2.2.0"
+playServicesMaps = "19.0.0"
+playServicesLocation = "21.3.0"
+firebaseMessagingKtx = "24.1.0"
+workRuntimeKtx = "2.10.0"
+
+[libraries]
+androidx-core = { module = "androidx.core:core" }
+androidx-core-animation = { module = "androidx.core:core-animation", version.ref = "corePerformance" }
+androidx-core-animation-testing = { module = "androidx.core:core-animation-testing", version.ref = "corePerformance" }
+androidx-core-google-shortcuts = { module = "androidx.core:core-google-shortcuts", version.ref = "coreRemoteviews" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-core-performance = { module = "androidx.core:core-performance", version.ref = "corePerformance" }
+androidx-core-remoteviews = { module = "androidx.core:core-remoteviews", version.ref = "coreRemoteviews" }
+androidx-core-role = { module = "androidx.core:core-role", version.ref = "corePerformance" }
+androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
+core-ktx = { module = "androidx.core:core-ktx" }
+hilt-android = { module = "com.google.dagger:hilt-android" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+play-services-maps = { module = "com.google.android.gms:play-services-maps", version.ref = "playServicesMaps" }
+play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
+firebase-messaging-ktx = { group = "com.google.firebase", name = "firebase-messaging-ktx", version.ref = "firebaseMessagingKtx" }
+androidx-work-runtime-ktx = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "workRuntimeKtx" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+

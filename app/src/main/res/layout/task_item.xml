@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+
+    <FrameLayout
+        android:layout_width="37dp"
+        android:layout_height="match_parent"
+        android:layout_weight="14">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/description_area"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="left"
+                android:gravity="center"
+                android:text="@string/full_name_field"
+                android:textSize="24sp"
+                tools:text="lorem ipsum dghas ghajhsaj hjashjsh hgjashjash" />
+
+            <TextView
+                android:id="@+id/date_area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="10-12-2003" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        tools:ignore="UselessLeaf"></FrameLayout>
+
+    <Button
+        android:id="@+id/delete_button"
+        android:layout_width="22dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="6"
+        android:backgroundTint="#F44336"
+        android:text="@string/delete_button_text"
+        app:cornerRadius="7dp" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        tools:ignore="UselessLeaf">
+
+    </FrameLayout>
+</LinearLayout>
